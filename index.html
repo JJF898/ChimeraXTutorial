@@ -27,12 +27,6 @@
   .nav-dropdown a { padding-left: 32px; font-size: 12px; }
   .nav-arrow { float: right; transition: transform .2s; }
   .nav-toggle.open .nav-arrow { transform: rotate(90deg); }
-<script>
-    function toggleNav(el) {
-      el.classList.toggle('open');
-      el.nextElementSibling.classList.toggle('open');
-    }
-</script>
 
   /* MAIN */
   main { flex: 1; padding: 48px 56px; max-width: 900px; }
@@ -120,6 +114,14 @@
 </style>
 </head>
 <body>
+
+  <script>
+    function toggleNav(el) {
+      el.classList.toggle('open');
+      el.nextElementSibling.classList.toggle('open');
+    }
+</script>
+
 <nav>
   <h2>ChimeraX Tutorial</h2>
   
