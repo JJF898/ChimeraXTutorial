@@ -21,12 +21,30 @@
   nav a { display: block; padding: 8px 20px; font-size: 13px; color: var(--muted); text-decoration: none; border-left: 3px solid transparent; transition: all .15s; }
   nav a:hover, nav a.active { color: var(--text); background: var(--surface2); border-left-color: var(--accent); }
   .nav-section { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; padding: 14px 20px 5px; }
-  .nav-sub a {padding-left: 32px; font-size: 12px; color: var(--muted); border-left: 3px solid transparent; }
+  .nav-sub {padding-left: 32px; font-size: 12px; color: var(--muted); border-left: 3px solid transparent; }
   .nav-dropdown {display: none; flex-direction: column; }
   .nav-dropdown.open { display: flex }
   .nav-dropdown a { padding-left: 32px; font-size: 12px; }
   .nav-arrow { float: right; transition: transform .2s; }
   .nav-toggle.open .nav-arrow { transform: rotate(90deg); }
+
+  /*TAB BAR*/
+  input[type="radio"] { display: none; }
+
+  .tab-content { display: none; }
+
+  #tab-file:checked ~ .tab-bar label[for="tab-file"],
+  #tab-image:checked ~ .tab-bar label[for="tab-image"],
+  #tab-display:checked ~ .tab-bar label[for="tab-display"] {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  #tab-file:checked ~ #content-file,
+  #tab-image:checked ~ #content-image,
+  #tab-display:checked ~ #content-display {
+    display: block;
+  }
 
   /* MAIN */
   main { flex: 1; padding: 48px 56px; max-width: 900px; }
@@ -119,20 +137,15 @@
   <h2>ChimeraX Tutorial</h2>
   
   <span class="nav-section">The Toolbar</span>
-  <div class="nav-item">
-   
-    </a>
-    <div class="nav-dropdown">
-      <a href="#[]">Molecule Display</a>
-      <a href="#[]">Nucleotides</a>
-      <a href="#[]">Graphics</a>
-      <a href="#[]">Map</a>
-      <a href="#[]">Medical Image</a>
-      <a href="#[]">Markers</a>
-      <a href="#[]">Right Mouse</a>
-  </div>
+  <div class="nav-item">The Home Section</div>
+  <a href="#[]">Molecule Display</a>
+  <a href="#[]">Nucleotides</a>
+  <a href="#[]">Graphics</a>
+  <a href="#[]">Map</a>
+  <a href="#[]">Medical Image</a>
+  <a href="#[]">Markers</a>
+  <a href="#[]">Right Mouse</a>
 
-  <div>
   <span class="nav-section">The Command Line</span>
   <a href="#[]">Molecule Display</a>
   <!--<a href="#opening">Opening Structures</a>-->
