@@ -164,6 +164,53 @@
 <main>
 
 <!--START-->
+
+<div class="tabs">
+
+  <!-- Radio inputs — hidden, just track which is selected -->
+  <input type="radio" name="tabs" id="tab-Home" checked />
+  <input type="radio" name="tabs" id="tab-Molecule Display" />
+  <input type="radio" name="tabs" id="tab-Nucleotides" />
+  <input type="radio" name="tabs" id="tab-Graphics" />
+  <input type="radio" name="tabs" id="tab-Map" />
+  <input type="radio" name="tabs" id="tab-Medical Image" />
+  <input type="radio" name="tabs" id="tab-Markers" />
+  <input type="radio" name="tabs" id="tab-Right Mouse" />
+  
+
+  <!-- The visible tab buttons -->
+  <div class="tab-bar">
+    <label for="tab-file" class="tab">Home</label>
+    <label for="tab-image" class="tab">Molecule Display</label>
+    <label for="tab-display" class="tab">Nucleotides</label>
+    <label for="tab-display" class="tab">Graphics</label>
+    <label for="tab-display" class="tab">Map</label>
+    <label for="tab-display" class="tab">Medical Image</label>
+    <label for="tab-display" class="tab">Markers</label>
+    <label for="tab-display" class="tab">Right Mouse</label>
+  </div>
+
+  <!-- Content panels -->
+  <div class="tab-content" id="content-Home">     
+    <h3>File</h3>
+    <div class="group">
+      <div class="item">
+        <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
+      </div>
+      <div class="item">
+        <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
+      </div>
+      <div class="item">
+        <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
+      </div>
+  </div>
+  <div class="tab-content" id="content-Molecule Display">
+    Image content here
+  </div>
+  <div class="tab-content" id="content-display">Display content here</div>
+
+</div>
+  
 <h2>Getting Started</h2>
 <p>This is what you see when you first open ChimeraX. The top toolbar contains most of the basic functions you'll need to open a protein and visualize its structure.</p>
 <img src="Homepage.png" alt="ChimeraX Homepage" style="width: 100%; border-radius: 5px; margin: 16px 0;" />
