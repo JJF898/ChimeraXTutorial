@@ -29,44 +29,12 @@
   .nav-toggle.open .nav-arrow { transform: rotate(90deg); }
 
   /*TAB BAR*/
-  input[type="radio"] { display: none; }
-
+  .tab-bar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
   .tab-content { display: none; }
-
-  #tab-file:checked ~ .tab-bar label[for="tab-file"],
-  #tab-image:checked ~ .tab-bar label[for="tab-image"],
-  #tab-display:checked ~ .tab-bar label[for="tab-display"] {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  #tab-file:checked ~ #content-file,
-  #tab-image:checked ~ #content-image,
-  #tab-display:checked ~ #content-display {
-    display: block;
-  }
-
-  tab-bar {
-  display: flex;
-  gap: 4px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 20px;
-}
-
-.tab {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 10px 18px;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 14px;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-}
-
-.tab:hover {
-  color: var(--text);
-}
+  .tab-content.active { display: block; }
+  .tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 10px 18px; color: var(--muted); cursor: pointer; font-size: 14px; font-family: 'Segoe UI', system-ui, sans-serif; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* MAIN */
   main { flex: 1; padding: 48px 56px; max-width: 900px; }
@@ -159,7 +127,7 @@
   <h2>ChimeraX Tutorial</h2>
   
   <span class="nav-section">The Toolbar</span>
-  <a href="#[]">The Home Section</div>
+  <a href="#start">The Home Section</div>
   <a href="#[]">Molecule Display</a>
   <a href="#[]">Nucleotides</a>
   <a href="#[]">Graphics</a>
@@ -186,53 +154,7 @@
 <main>
 
 <!--START-->
-
-<div class="tabs">
-
-  <!-- Radio inputs — hidden, just track which is selected -->
-  <input type="radio" name="tabs" id="tab-Home" checked />
-  <input type="radio" name="tabs" id="tab-Molecule Display" />
-  <input type="radio" name="tabs" id="tab-Nucleotides" />
-  <input type="radio" name="tabs" id="tab-Graphics" />
-  <input type="radio" name="tabs" id="tab-Map" />
-  <input type="radio" name="tabs" id="tab-Medical Image" />
-  <input type="radio" name="tabs" id="tab-Markers" />
-  <input type="radio" name="tabs" id="tab-Right Mouse" />
-  
-
-  <!-- The visible tab buttons -->
-  <div class="tab-bar">
-    <label for="tab-file" class="tab">Home</label>
-    <label for="tab-image" class="tab">Molecule Display</label>
-    <label for="tab-display" class="tab">Nucleotides</label>
-    <label for="tab-display" class="tab">Graphics</label>
-    <label for="tab-display" class="tab">Map</label>
-    <label for="tab-display" class="tab">Medical Image</label>
-    <label for="tab-display" class="tab">Markers</label>
-    <label for="tab-display" class="tab">Right Mouse</label>
-  </div>
-
-  <!-- Content panels -->
-  <div class="tab-content" id="content-Home">     
-    <h3>File</h3>
-    <div class="group">
-      <div class="item">
-        <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
-      </div>
-      <div class="item">
-        <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
-      </div>
-      <div class="item">
-        <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
-      </div>
-  </div>
-  <div class="tab-content" id="content-Molecule Display">
-    Image content here
-  </div>
-  <div class="tab-content" id="content-display">Display content here</div>
-
-</div>
-  
+ 
 <h2>Getting Started</h2>
 <p>This is what you see when you first open ChimeraX. The top toolbar contains most of the basic functions you'll need to open a protein and visualize its structure.</p>
 <img src="Homepage.png" alt="ChimeraX Homepage" style="width: 100%; border-radius: 5px; margin: 16px 0;" />
@@ -242,52 +164,78 @@
 <h2 style="border-bottom: none; margin-top: 32px; margin-bottom: 4px;">Top Menu</h2>
 <div class="tabs">
 
-  <!-- Radio inputs — hidden, just track which is selected -->
-  <input type="radio" name="tabs" id="tab-Home" checked />
-  <input type="radio" name="tabs" id="tab-Molecule Display" />
-  <input type="radio" name="tabs" id="tab-Nucleotides" />
-  <input type="radio" name="tabs" id="tab-Graphics" />
-  <input type="radio" name="tabs" id="tab-Map" />
-  <input type="radio" name="tabs" id="tab-Medical Image" />
-  <input type="radio" name="tabs" id="tab-Markers" />
-  <input type="radio" name="tabs" id="tab-Right Mouse" />
-  
-
-  <!-- The visible tab buttons -->
-  <div class="tab-bar">
-    <label for="tab-file" class="tab">Home</label>
-    <label for="tab-image" class="tab">Molecule Display</label>
-    <label for="tab-display" class="tab">Nucleotides</label>
-    <label for="tab-display" class="tab">Graphics</label>
-    <label for="tab-display" class="tab">Map</label>
-    <label for="tab-display" class="tab">Medical Image</label>
-    <label for="tab-display" class="tab">Markers</label>
-    <label for="tab-display" class="tab">Right Mouse</label>
-  </div>
-
-  <!-- Content panels -->
-  <div class="tab-content" id="content-Home">     
-    <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
-    <h3>File</h3>
-    <div class="group">
-      <div class="item">
-        <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
-      </div>
-      <div class="item">
-        <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
-      </div>
-      <div class="item">
-        <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
-      </div>
-  </div>
-  <div class="tab-content" id="content-Molecule Display">
-    Image content here
-  </div>
-  <div class="tab-content" id="content-display">Display content here</div>
-
-</div>
 <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
+<div class="tab-bar">
+  <button class="tab active" onclick="switchTab('content-Home', this)">Home</button>
+  <button class="tab" onclick="switchTab('content-Molecule_Display', this)">Molecule Display</button>
+  <button class="tab" onclick="switchTab('content-Nucleotides', this)">Nucleotides</button>
+  <button class="tab" onclick="switchTab('content-Graphics', this)">Graphics</button>
+  <button class="tab" onclick="switchTab('content-Map', this)">Map</button>
+  <button class="tab" onclick="switchTab('content-Medical_Image', this)">Medical Image</button>
+  <button class="tab" onclick="switchTab('content-Markers', this)">Markers</button>
+  <button class="tab" onclick="switchTab('content-Right_Mouse', this)">Right Mouse</button>
+</div>
 
+<div class="tab-content active" id="content-Home">
+  <h3>File</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
+    </div>
+    <div class="item">
+      <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
+    </div>
+    <div class="item">
+      <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
+    </div>
+  </div>
+  
+  <h3>Images</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
+    </div>
+    <div class="item">
+      <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
+    </div>
+  </div>
+  
+  <h3>Atoms, Cartoons, & Styles</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Show / Hide Atoms —</strong> Toggles atom visibility, letting you switch between the full atomic structure and just the ribbon diagram.</p>
+    </div>
+    <div class="item">
+      <p><strong>Show / Hide Cartoon —</strong> Toggles the ribbon representation, letting you switch between the cartoon view and the raw atomic structure.</p>
+    </div>
+    <div class="item">
+      <p><strong>Stick / Sphere / Ball-and-Stick —</strong> Three separate buttons that each switch the display style of your molecule. Stick shows bonds as rods, Sphere shows each atom as a full-sized ball (CPK style), and Ball-and-Stick combines both.</p>
+    </div>
+  </div>
+  
+  <h3>Background and Lighting</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Background —</strong> Switches between a white and black background. Black works better for presentations; white is cleaner for figures.</p>
+    </div>
+    <div class="item">
+      <p><strong>Lighting —</strong> Changes the lighting between simple, soft, and full, helping you highlight different structural features.</p>
+    </div>
+  </div>
+  
+  <h3>Inspect</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Inspect —</strong> Opens a panel showing all properties of the selected chains — atom count, color, residues, pseudobonds, and more.</p>
+    </div>
+  </div>
+</div>
+<div class="tab-content" id="content-Molecule_Display">
+  Image stuff here
+</div>
+<div class="tab-content" id="content-display">Display stuff here</div>
+
+  
 <h3>File</h3>
 <div class="group">
   <div class="item">
@@ -872,6 +820,22 @@ navLinks.forEach(link => {
     document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+  function copyCode(btn) {
+    // all the existing code already here, don't touch it
+  }
+
+  function downloadScript(name, pdb1, pdb2, description) {
+    // all the existing code already here, don't touch it
+  }
+
+  // just add this new one at the bottom
+  function switchTab(id, el) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
 </script>
 </body>
 </html>
