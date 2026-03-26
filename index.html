@@ -161,7 +161,17 @@
 <p>The toolbar is divided into sections with shortcuts for quick actions. Each section is described below.</p>
 
 <section id="start">
+<div style="display: flex; gap: 16px;">
+  <div style="flex: 1;">
+    <h2 style="border-bottom: none; margin-top: 32px; margin-bottom: 4px;">Top Menu</h2>
+  </div>
+  <div style="flex: 1;">
+    <p font-color: #C3C9D6>Remember these buttons only work on the selected atoms, not whole molecular structures</p>
+  </div>
+</div>
 <h2 style="border-bottom: none; margin-top: 32px; margin-bottom: 4px;">Top Menu</h2>
+
+<!--TABS-->
 <div class="tabs">
 
 <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
@@ -177,6 +187,7 @@
 </div>
 
 <div class="tab-content active" id="content-Home">
+  <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
   <h3>File</h3>
   <div class="group">
     <div class="item">
@@ -231,65 +242,57 @@
   </div>
 </div>
 <div class="tab-content" id="content-Molecule_Display">
-  Image stuff here
+    <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
+    <h3>Atoms, Cartoon, Surfaces & Styles</h3>
+    <div class="group">
+      <div class="item">
+        <p><strong>Show / Hide Atoms —</strong>Toggles atom visibility, letting you switch between the full atomic structure and just the ribbon diagram.</p>
+      </div>
+      <div class="item">
+        <p><strong>Show / Hide Cartoon —</strong> Toggles the ribbon representation, letting you switch between the cartoon view and the raw atomic structure.</p>
+      </div>
+      <div class="item">
+        <p><strong>Show / Hide Surfaces —</strong> Toggles the representation of molecular surfaces, letting you switch between the surface view and the raw atomic structure.</p>
+      </div>
+      <div class="item">
+        <p><strong>Styles —</strong> Allows you to switch between stick, sphere, and ballstick models for the mplecular structure, as well as choose a style for aminoacid chains in the structure</p>
+      </div>
+    </div>
+    <h3>Coloring</h3>
+    <div class="group">
+      <div class="item">
+        <p><strong>Heteroatom —</strong> Color-codes heteroatoms in a molecular model by element following CPK color conventions.</p>
+      </div>
+      <div class="item">
+        <p><strong>Chain —</strong> Color-codes chains in a molecular model by chain ID (each chain has a different color).</p>
+      </div>
+      <div class="item">
+        <p><strong>Polymer —</strong> Color-codes polymer chains in a molecular model by chain sequence (chains with the same sequence have the same color).</p>
+      </div>
+      <div class="item">
+        <p><strong>Rainbow —</strong> Creates a color gradient (blue to red) starting at the N-terminus, and ending at the C-terminus of only the selected atoms.</p>
+      </div>
+      <div class="item">
+        <p><strong>Electrostatic —</strong> Maps the electrostatic potential onto the surface of a molecular structure. Positive regions are colored red, negative regions are colored blue.</p>
+      </div>
+      <div class="item">
+        <p><strong>Hydrophobic —</strong> Colors the surface of a molecular diagram by hydrophobicity.</p>
+      </div>
+      <div class="item">
+        <p><strong>B-factor —</strong> Colors atoms or surface of a molecular model by their b-factor value from the PDB file. High B-factor regions are colored with shades of red, while low B-factor regions are colored with shades of blue.</p>
+      </div>
+      <div class="item">
+        <p><strong>Nucleotide —</strong> Color-codes selected nucleotide chains by nitrogenous base.</p>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="tab-content" id="content-display">Display stuff here</div>
-
-  
-<h3>File</h3>
-<div class="group">
-  <div class="item">
-    <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
-  </div>
-  <div class="item">
-    <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
-  </div>
-  <div class="item">
-    <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
-  </div>
-</div>
-
-<h3>Images</h3>
-<div class="group">
-  <div class="item">
-    <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
-  </div>
-  <div class="item">
-    <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
-  </div>
-</div>
-
-<h3>Atoms, Cartoons, & Styles</h3>
-<div class="group">
-  <div class="item">
-    <p><strong>Show / Hide Atoms —</strong> Toggles atom visibility, letting you switch between the full atomic structure and just the ribbon diagram.</p>
-  </div>
-  <div class="item">
-    <p><strong>Show / Hide Cartoon —</strong> Toggles the ribbon representation, letting you switch between the cartoon view and the raw atomic structure.</p>
-  </div>
-  <div class="item">
-    <p><strong>Stick / Sphere / Ball-and-Stick —</strong> Three separate buttons that each switch the display style of your molecule. Stick shows bonds as rods, Sphere shows each atom as a full-sized ball (CPK style), and Ball-and-Stick combines both.</p>
-  </div>
-</div>
-
-<h3>Background and Lighting</h3>
-<div class="group">
-  <div class="item">
-    <p><strong>Background —</strong> Switches between a white and black background. Black works better for presentations; white is cleaner for figures.</p>
-  </div>
-  <div class="item">
-    <p><strong>Lighting —</strong> Changes the lighting between simple, soft, and full, helping you highlight different structural features.</p>
-  </div>
-</div>
-
-<h3>Inspect</h3>
-<div class="group">
-  <div class="item">
-    <p><strong>Inspect —</strong> Opens a panel showing all properties of the selected chains — atom count, color, residues, pseudobonds, and more.</p>
-  </div>
-</div>
-
-
+<div class="tab-content" id="content-display">Display stuff here</div>
+<div class="tab-content" id="content-display">Display stuff here</div>
+<div class="tab-content" id="content-display">Display stuff here</div>
+<div class="tab-content" id="content-display">Display stuff here</div>
+<div class="tab-content" id="content-display">Display stuff here</div>
 <!--
 <details style="background: #1a1d27; border: 1px solid #2e3250; border-radius: 10px; padding: 14px 18px; margin-bottom: 10px;">
   <summary style="cursor: pointer; font-weight: 600; color: #e4e6f0;">Click me</summary>
@@ -298,6 +301,7 @@
 -->
   
 <!-- OPENING -->
+<!--
 <section id="opening">
   <h2>Opening & Fetching Structures</h2>
   <p>The <code>open</code> command is ChimeraX's universal entry point for loading data — local files, URLs, and online database fetches all go through it. A 4-character PDB ID with no prefix automatically fetches from RCSB.</p>
@@ -345,7 +349,8 @@
     After opening structures, run <code>info models</code> to confirm model numbers. Newly opened structures are usually assigned #1, #2, etc. in order.
   </div>
 </section>
-
+-->
+  
 <!-- NAVIGATION -->
 <section id="navigation">
   <h2>Navigation & Viewing Controls</h2>
