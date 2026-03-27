@@ -1214,7 +1214,7 @@
       <div class="step-body">
         <h4>Run the Morph</h4>
         <p>ChimeraX creates a new model (usually #3) containing the trajectory.</p>
-        <div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><span class="cmd">morph</span> <span class="val">#1,#2</span> <span class="param">frames</span> <span class="val">30</span> <span class="param">method</span> <span class="val">corkscrew</span> <span class="param">rate</span> <span class="val">sinusoidal</span></pre></div>
+        <div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><span class="cmd">morph</span> <span class="val">#1 #2</span> <span class="param">frames</span> <span class="val">30</span> <span class="param">method</span> <span class="val">corkscrew</span> <span class="param">rate</span> <span class="val">sinusoidal</span></pre></div>
       </div>
     </div>
     <div class="step">
@@ -1332,7 +1332,7 @@ open ${pdb2}
 wait
 matchmaker #2 to #1
 wait
-morph #1,#2 frames 30 method corkscrew rate sinusoidal
+morph #1 #2 frames 30 method corkscrew rate sinusoidal
 hide #1,#2 models
 show #3 models
 cartoon #3
