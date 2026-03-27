@@ -1326,10 +1326,12 @@ function downloadScript(name, pdb1, pdb2, description) {
   const content = `# ChimeraX Morph Script — ${description}
 # Structures: ${pdb1} -> ${pdb2}
 # -----------------------------------------------
-
 open ${pdb1}
+wait
 open ${pdb2}
+wait
 matchmaker #2 to #1
+wait
 morph #1,#2 frames 30 method corkscrew rate sinusoidal
 hide #1,#2 models
 show #3 models
