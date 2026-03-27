@@ -609,28 +609,68 @@
       </div>   
         
       <div class="tab-content active" id="content-View">
-        <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
-        <h3>File</h3>
-        <div class="group">
-          <div class="item">
-            <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
+        <h3>Default Mouse Controls</h3>
+        <div class="mouse-grid">
+          <div class="mouse-card">
+            <div class="action">🔄 Rotate</div>
+            <div class="control">Left drag</div>
+            <div class="sub">Mac: click-drag or 2-finger rotate</div>
           </div>
-          <div class="item">
-            <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
+          <div class="mouse-card">
+            <div class="action">✥ Translate</div>
+            <div class="control">Middle / Right drag</div>
+            <div class="sub">Mac: Alt+drag or 3-finger drag</div>
           </div>
-          <div class="item">
-            <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
+          <div class="mouse-card">
+            <div class="action">🔍 Zoom</div>
+            <div class="control">Scroll wheel</div>
+            <div class="sub">Mac: pinch or 4-finger drag</div>
+          </div>
+          <div class="mouse-card">
+            <div class="action">👆 Select</div>
+            <div class="control">Ctrl + left click</div>
+            <div class="sub">+Shift to add to selection</div>
+          </div>
+          <div class="mouse-card">
+            <div class="action">🏷 Identify</div>
+            <div class="control">Hover (pause)</div>
+            <div class="sub">Shows residue/atom label</div>
+          </div>
+          <div class="mouse-card">
+            <div class="action">↩ Z-Rotate</div>
+            <div class="control">Ctrl + left drag</div>
+            <div class="sub">Rotates around viewing axis</div>
           </div>
         </div>
-        
-        <h3>Images</h3>
-        <div class="group">
-          <div class="item">
-            <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
-          </div>
-          <div class="item">
-            <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
-          </div>
+      
+        <h3>View Command</h3>
+        <p>The <code>view</code> command focuses and resets the camera — essential for quickly navigating to a specific part of a structure.</p>
+        <div class="code-block">
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          <pre><span class="cmd">view</span>                         <span class="comment"># fit all models in view</span>
+      <span class="cmd">view</span> <span class="val">#1</span>                     <span class="comment"># focus on model 1</span>
+      <span class="cmd">view</span> <span class="val">/A:50-100</span>              <span class="comment"># zoom to residues 50-100 of chain A</span>
+      <span class="cmd">view</span> <span class="val">orient</span>                 <span class="comment"># reset to standard orientation</span>
+      <span class="cmd">view</span> <span class="val">name</span> <span class="param">myview</span>           <span class="comment"># save current view</span>
+      <span class="cmd">view</span> <span class="val">myview</span> <span class="param">30</span>             <span class="comment"># restore saved view over 30 frames</span></pre>
+        </div>
+      
+        <h3>Zoom, Turn & Move Commands</h3>
+        <div class="code-block">
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          <pre><span class="comment"># Zoom</span>
+      <span class="cmd">zoom</span> <span class="val">2</span>                      <span class="comment"># double the apparent size</span>
+      <span class="cmd">zoom</span> <span class="val">1.5</span> <span class="param">frames</span> <span class="val">20</span>         <span class="comment"># gradual zoom over 20 frames</span>
+      
+      <span class="comment"># Turn (rotate scene)</span>
+      <span class="cmd">turn</span> <span class="val">y</span> <span class="val">1</span> <span class="val">360</span>               <span class="comment"># full 360° Y-axis rotation, 1° per frame</span>
+      <span class="cmd">turn</span> <span class="val">x</span> <span class="val">90</span>                  <span class="comment"># 90° around X axis</span>
+      <span class="cmd">stop</span>                         <span class="comment"># stop any ongoing animation</span>
+      
+      <span class="comment"># Move (translate scene)</span>
+      <span class="cmd">move</span> <span class="val">x</span> <span class="val">5</span>                    <span class="comment"># translate 5 Å along X</span>
+      <span class="cmd">move</span> <span class="val">y</span> <span class="val">-2</span> <span class="val">10</span>               <span class="comment"># translate -2 Å along Y over 10 frames</span></pre>
+        </div>
         </div>
   </div> 
 </div>  
@@ -756,7 +796,6 @@
 <span class="cmd">move</span> <span class="val">x</span> <span class="val">5</span>                    <span class="comment"># translate 5 Å along X</span>
 <span class="cmd">move</span> <span class="val">y</span> <span class="val">-2</span> <span class="val">10</span>               <span class="comment"># translate -2 Å along Y over 10 frames</span></pre>
   </div>
-</section>
 
 <!-- SELECTION -->
 <section id="selection">
