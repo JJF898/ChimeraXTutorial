@@ -569,70 +569,70 @@
   </div>
   
   <div class="tab-content active" id="content-Opening">
-    <h3>Fetching from RCSB PDB</h3>
-    <div class="code-block">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-      <pre><span class="comment"># These all fetch the same structure</span>
-  <span class="cmd">open</span> <span class="val">2gbp</span>                   <span class="comment"># simplest — 4-char ID defaults to RCSB</span>
-  <span class="cmd">open</span> <span class="val">2gbp</span> <span class="param">format</span> <span class="val">pdb</span>        <span class="comment"># force legacy PDB format</span>
-  <span class="cmd">open</span> <span class="val">pdb:2gbp</span>               <span class="comment"># explicit prefix syntax</span></pre>
-    </div>
-  
-    <h3>Fetching from Other Sources</h3>
-    <div class="code-block">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-      <pre><span class="cmd">open</span> <span class="val">emdb:3087</span>              <span class="comment"># EMDB electron density map</span>
-  <span class="cmd">open</span> <span class="val">alphafold:P12345</span>        <span class="comment"># AlphaFold predicted structure (UniProt ID)</span>
-  <span class="cmd">open</span> <span class="val">pubchem:2244</span>            <span class="comment"># PubChem 3D structure by CID</span>
-  <span class="cmd">open</span> <span class="val">smiles:c1ccccc1</span>         <span class="comment"># build from SMILES string</span>
-  <span class="cmd">open</span> <span class="val">iupac:aspirin</span>           <span class="comment"># build from IUPAC name</span></pre>
-    </div>
-  
-    <h3>Useful open Options</h3>
-    <table>
-      <tr><th>Option</th><th>Description</th></tr>
-      <tr><td style="color:#d99c1c">format pdb</td><td>Force a specific file format (pdb, mmcif, sdf, etc.)</td></tr>
-      <tr><td style="color:#d99c1c">coordsets true</td><td>Load a multi-model file as a trajectory instead of separate models</td></tr>
-      <tr><td style="color:#d99c1c">ignoreCache true</td><td>Force re-download even if the file is already cached</td></tr>
-      <tr><td style="color:#d99c1c">name my-name</td><td>Assign a custom name to the loaded model</td></tr>
-    </table>
-  
-    <h3>Managing Models</h3>
-    <div class="code-block">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-      <pre><span class="cmd">close</span> <span class="val">#1</span>                    <span class="comment"># close model 1</span>
-  <span class="cmd">close</span> <span class="val">#2,4-6</span>               <span class="comment"># close models 2, 4, 5, 6</span>
-  <span class="cmd">close</span>                        <span class="comment"># close everything</span>
-  <span class="cmd">info</span> <span class="val">models</span>                 <span class="comment"># list all open models and their IDs</span>
-  <span class="cmd">save</span> <span class="val">~/session.cxs</span>         <span class="comment"># save current session</span></pre>
-    </div>
-    </div>   
-      
-    <div class="tab-content active" id="content-View">
-      <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
-      <h3>File</h3>
-      <div class="group">
-        <div class="item">
-          <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
-        </div>
-        <div class="item">
-          <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
-        </div>
-        <div class="item">
-          <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
-        </div>
+      <h3>Fetching from RCSB PDB</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><span class="comment"># These all fetch the same structure</span>
+    <span class="cmd">open</span> <span class="val">2gbp</span>                   <span class="comment"># simplest — 4-char ID defaults to RCSB</span>
+    <span class="cmd">open</span> <span class="val">2gbp</span> <span class="param">format</span> <span class="val">pdb</span>        <span class="comment"># force legacy PDB format</span>
+    <span class="cmd">open</span> <span class="val">pdb:2gbp</span>               <span class="comment"># explicit prefix syntax</span></pre>
       </div>
-      
-      <h3>Images</h3>
-      <div class="group">
-        <div class="item">
-          <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
-        </div>
-        <div class="item">
-          <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
-        </div>
+    
+      <h3>Fetching from Other Sources</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><span class="cmd">open</span> <span class="val">emdb:3087</span>              <span class="comment"># EMDB electron density map</span>
+    <span class="cmd">open</span> <span class="val">alphafold:P12345</span>        <span class="comment"># AlphaFold predicted structure (UniProt ID)</span>
+    <span class="cmd">open</span> <span class="val">pubchem:2244</span>            <span class="comment"># PubChem 3D structure by CID</span>
+    <span class="cmd">open</span> <span class="val">smiles:c1ccccc1</span>         <span class="comment"># build from SMILES string</span>
+    <span class="cmd">open</span> <span class="val">iupac:aspirin</span>           <span class="comment"># build from IUPAC name</span></pre>
       </div>
-    </div> 
+    
+      <h3>Useful open Options</h3>
+      <table>
+        <tr><th>Option</th><th>Description</th></tr>
+        <tr><td style="color:#d99c1c">format pdb</td><td>Force a specific file format (pdb, mmcif, sdf, etc.)</td></tr>
+        <tr><td style="color:#d99c1c">coordsets true</td><td>Load a multi-model file as a trajectory instead of separate models</td></tr>
+        <tr><td style="color:#d99c1c">ignoreCache true</td><td>Force re-download even if the file is already cached</td></tr>
+        <tr><td style="color:#d99c1c">name my-name</td><td>Assign a custom name to the loaded model</td></tr>
+      </table>
+    
+      <h3>Managing Models</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><span class="cmd">close</span> <span class="val">#1</span>                    <span class="comment"># close model 1</span>
+    <span class="cmd">close</span> <span class="val">#2,4-6</span>               <span class="comment"># close models 2, 4, 5, 6</span>
+    <span class="cmd">close</span>                        <span class="comment"># close everything</span>
+    <span class="cmd">info</span> <span class="val">models</span>                 <span class="comment"># list all open models and their IDs</span>
+    <span class="cmd">save</span> <span class="val">~/session.cxs</span>         <span class="comment"># save current session</span></pre>
+      </div>
+      </div>   
+        
+      <div class="tab-content active" id="content-View">
+        <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
+        <h3>File</h3>
+        <div class="group">
+          <div class="item">
+            <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
+          </div>
+          <div class="item">
+            <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
+          </div>
+          <div class="item">
+            <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
+          </div>
+        </div>
+        
+        <h3>Images</h3>
+        <div class="group">
+          <div class="item">
+            <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
+          </div>
+          <div class="item">
+            <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
+          </div>
+        </div>
+  </div> 
 </div>  
 
   
