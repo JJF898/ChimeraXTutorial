@@ -556,7 +556,7 @@
 <h2>The Command Line</h2>
 <p>The Command Line gives you control over every aspect of the software. It allows you to skip the process of clicking through menus and finding buttons with predetermined scripts. Intead, it allows you to create your own.</p>  
 
-<h2 style="color: var(--accent); font-size: 18px">Useful Commands</h2>
+<h4>Useful Commands</h4>
 <div class="tabs">
 
 <div id="tabgroup-2">
@@ -1161,6 +1161,7 @@
     <tr><td>core_fraction 0–1</td><td>Fraction of atoms used as rigid core for alignment during interpolation</td></tr>
   </table>
 
+  <!--
   <h3>Example Molecules for Morphing</h3>
   <p>These are well-characterized PDB structure pairs that morph cleanly and clearly.</p>
   <div class="cards">
@@ -1187,6 +1188,7 @@
     </div>
   </div>
 </section>
+-->
 
 <!-- MORPH WALKTHROUGH -->
 <section id="morph-walkthrough">
@@ -1246,6 +1248,17 @@
   </div>
 </section>
 
+  <h3>Useful Utility Commands</h3>
+  <div class="code-block">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><span class="cmd">coordset</span> <span class="val">#3</span> <span class="val">15</span>              <span class="comment"># jump to frame 15</span>
+<span class="cmd">coordset</span> <span class="val">#3</span> <span class="param">pause</span>           <span class="comment"># stop playback</span>
+<span class="cmd">close</span> <span class="val">#3</span>                    <span class="comment"># delete morph model</span>
+<span class="cmd">log</span> <span class="val">clear</span>                   <span class="comment"># clear the command log</span>
+<span class="cmd">undo</span>                         <span class="comment"># undo last command</span>
+<span class="cmd">help</span> <span class="val">morph</span>                  <span class="comment"># open morph docs in browser</span></pre>
+  </div>
+
 <!-- SCRIPTS -->
 <section id="scripts">
   <h2>Downloadable Scripts</h2>
@@ -1297,7 +1310,7 @@
     <strong>✓ Multi-step morphs</strong>
     You can morph through more than two structures: <code>morph #1,#2,#3 frames 20</code>
   </div>
-  -->
+
   
   <h3>Useful Utility Commands</h3>
   <div class="code-block">
@@ -1310,7 +1323,8 @@
 <span class="cmd">help</span> <span class="val">morph</span>                  <span class="comment"># open morph docs in browser</span></pre>
   </div>
 </section>
-
+-->
+  
 </main>
 
 <script>
