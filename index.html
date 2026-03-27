@@ -64,7 +64,7 @@
   /* ALERTS */
   .alert { border-left: 3px solid; border-radius: 8px; padding: 13px 16px; margin: 14px 0; font-size: 13.5px; line-height: 1.6; }
   .alert-info { background: #1a2540; border-color: var(--accent); color: #a0b8e8; }
-  .alert-tip { background: #1a2b20; border-color: var(--green); color: #80c8a0; }
+  .alert-tip { background: #C5E8C5; border-color: var(--green); color: #80c8a0; }
   .alert-warn { background: #2b2410; border-color: var(--yellow); color: #c8a860; }
   .alert strong { display: block; margin-bottom: 3px; color: inherit; }
 
@@ -674,7 +674,6 @@
         </div>
   </div>
   <div class="tab-content" id="content-Selection">
-    <h2>Selection Tools</h2>
     <p>Selection is central to ChimeraX — almost every command accepts an atom specification to limit its scope. The syntax follows a hierarchy: <strong>#model / chain : residue @ atom</strong>.</p>
   
     <h3>The select Command</h3>
@@ -724,6 +723,115 @@
     <div class="alert alert-tip">
       <strong>💡 Using sel</strong>
       <code>sel</code> is a built-in reference to your current selection and works anywhere an atom spec is accepted — e.g. <code>color sel red</code> or <code>show sel atoms</code>.
+    </div>
+  </div>
+  <div class="tab-content" id="content-Representations">
+    <h2>Representations</h2>
+    <p>ChimeraX has three main visual representations: <strong>cartoon</strong> (ribbon), <strong>surface</strong>, and <strong>atoms/bonds</strong>. Each can be shown independently and styled per-atom, residue, or model.</p>
+  
+    <h3>Cartoon (Ribbon)</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">cartoon</span>                       <span class="comment"># show cartoon for all</span>
+  <span class="cmd">cartoon</span> <span class="val">#1</span>                    <span class="comment"># cartoon for model 1 only</span>
+  <span class="cmd">~cartoon</span>                      <span class="comment"># hide all cartoons</span>
+  
+  <span class="comment"># Styling</span>
+  <span class="cmd">cartoon style</span> <span class="param">helix</span> <span class="param">width</span> <span class="val">1.5</span> <span class="param">thickness</span> <span class="val">0.3</span>
+  <span class="cmd">cartoon style</span> <span class="param">strand</span> <span class="param">xsection</span> <span class="val">rectangle</span> <span class="param">width</span> <span class="val">2</span>
+  <span class="cmd">cartoon style</span> <span class="param">protein</span> <span class="param">modeHelix</span> <span class="val">tube</span>    <span class="comment"># tube-style helices</span></pre>
+    </div>
+  
+    <h3>Molecular Surface</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">surface</span> <span class="val">#1</span>                    <span class="comment"># surface for model 1</span>
+  <span class="cmd">surface</span> <span class="val">#1</span> <span class="param">transparency</span> <span class="val">50</span>   <span class="comment"># 50% transparent surface</span>
+  <span class="cmd">surface</span> <span class="val">enclose</span> <span class="val">#1</span>           <span class="comment"># one unified surface for all chains</span>
+  <span class="cmd">~surface</span>                      <span class="comment"># hide surfaces</span>
+  <span class="cmd">surface style</span> <span class="val">#1</span> <span class="val">mesh</span>        <span class="comment"># switch to mesh display</span></pre>
+    </div>
+  
+    <h3>Atoms & Bonds</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">show</span> <span class="val">#1</span> <span class="val">atoms</span>               <span class="comment"># show atoms for model 1</span>
+  <span class="cmd">hide</span> <span class="val">atoms</span>                   <span class="comment"># hide all atoms</span>
+  
+  <span class="comment"># style: sphere (CPK), stick, or ball (ball-and-stick)</span>
+  <span class="cmd">style</span> <span class="val">sphere</span>                 <span class="comment"># space-filling CPK</span>
+  <span class="cmd">style</span> <span class="val">stick</span>                  <span class="comment"># stick model</span>
+  <span class="cmd">style</span> <span class="val">ligand</span> <span class="val">ball</span>            <span class="comment"># ball-and-stick for ligand</span>
+  <span class="cmd">style</span> <span class="val">sel</span> <span class="val">sphere</span>             <span class="comment"># space-filling for current selection</span></pre>
+    </div>
+  
+    <h3>Show / Hide with Targets</h3>
+    <p>The <code>target</code> keyword lets you control exactly which representation a show/hide applies to using letter codes: <strong>a</strong> (atoms), <strong>c</strong> (cartoons), <strong>s</strong> (surfaces), <strong>m</strong> (models).</p>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">show</span> <span class="val">target</span> <span class="val">acs</span>             <span class="comment"># show atoms + cartoons + surfaces</span>
+  <span class="cmd">hide</span> <span class="val">/b-d</span> <span class="val">cartoons</span>           <span class="comment"># hide cartoon for chains B–D only</span>
+  <span class="cmd">hide</span> <span class="val">#1</span> <span class="val">surfaces</span>             <span class="comment"># hide surfaces on model 1</span></pre>
+    </div>
+  
+    <h3>Common Representation Combos</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="comment"># Cartoon with ligand in ball-and-stick</span>
+  <span class="cmd">cartoon</span>; <span class="cmd">hide</span> <span class="val">atoms</span>; <span class="cmd">show</span> <span class="val">ligand</span> <span class="val">atoms</span>; <span class="cmd">style</span> <span class="val">ligand</span> <span class="val">ball</span>
+  
+  <span class="comment"># Transparent surface over cartoon</span>
+  <span class="cmd">cartoon</span>; <span class="cmd">surface</span> <span class="val">#1</span> <span class="param">transparency</span> <span class="val">60</span>
+  
+  <span class="comment"># All-atom stick model</span>
+  <span class="cmd">show</span> <span class="val">atoms</span>; <span class="cmd">hide</span> <span class="val">cartoons</span>; <span class="cmd">style</span> <span class="val">stick</span></pre>
+    </div>
+  </div>
+  <div class="tab-content" id="content-Coloring">
+    <h2>Coloring</h2>
+    <p>The <code>color</code> command handles everything from simple named colors to rainbow schemes, B-factor gradients, and electrostatic surfaces. The <code>target</code> string controls which representation gets colored.</p>
+  
+    <h3>Simple Coloring</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">color</span> <span class="val">red</span>                    <span class="comment"># color everything red</span>
+  <span class="cmd">color</span> <span class="val">#1</span> <span class="val">dodger blue</span>         <span class="comment"># color model 1</span>
+  <span class="cmd">color</span> <span class="val">/A:12,260-275</span> <span class="val">hot pink</span> <span class="val">atoms</span>   <span class="comment"># specific atoms only</span>
+  <span class="cmd">color</span> <span class="val">sel</span> <span class="val">cornflower blue</span>   <span class="comment"># color current selection</span></pre>
+    </div>
+  
+    <h3>Scheme-Based Coloring</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">color</span> <span class="val">byelement</span>              <span class="comment"># Jmol periodic-table colors</span>
+  <span class="cmd">color</span> <span class="val">byhetero</span>               <span class="comment"># element colors, leave carbon unchanged</span>
+  <span class="cmd">color</span> <span class="val">bychain</span>                <span class="comment"># distinct color per chain</span>
+  <span class="cmd">color</span> <span class="val">bymodel</span>                <span class="comment"># distinct color per model</span>
+  <span class="cmd">color</span> <span class="val">fromatoms</span>              <span class="comment"># match surface colors to atoms</span></pre>
+    </div>
+  
+    <h3>Rainbow Coloring</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">rainbow</span>                      <span class="comment"># rainbow by residue (blue → red)</span>
+  <span class="cmd">rainbow</span> <span class="val">chains</span>               <span class="comment"># one color per chain</span>
+  <span class="cmd">rainbow</span> <span class="val">:1-50</span>               <span class="comment"># rainbow only residues 1–50</span>
+  <span class="cmd">rainbow</span> <span class="param">palette</span> <span class="val">cornflowerblue:red:gold</span></pre>
+    </div>
+  
+    <h3>Coloring by B-Factor or Attribute</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">color</span> <span class="val">bfactor</span> <span class="val">/A</span> <span class="param">range</span> <span class="val">2,30</span>              <span class="comment"># B-factor gradient for chain A</span>
+  <span class="cmd">color</span> <span class="val">bfactor</span> <span class="val">protein</span> <span class="param">palette</span> <span class="val">rainbow</span>    <span class="comment"># rainbow B-factor</span>
+  <span class="cmd">color</span> <span class="val">electrostatic</span> <span class="val">#1</span> <span class="param">map</span> <span class="val">#2</span> <span class="param">palette</span> <span class="val">redblue</span> <span class="param">range</span> <span class="val">-10,10</span></pre>
+    </div>
+  
+    <h3>Transparency</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">color</span> <span class="val">#1</span> <span class="val">red</span> <span class="param">transparency</span> <span class="val">50</span>
+  <span class="cmd">transparency</span> <span class="val">40</span> <span class="val">target</span> <span class="val">s</span>     <span class="comment"># set surface transparency independently</span></pre>
     </div>
   </div>
 </div>  
@@ -851,6 +959,7 @@
   </div>
 -->
 <!-- SELECTION -->
+<!--
 <section id="selection">
   <h2>Selection Tools</h2>
   <p>Selection is central to ChimeraX — almost every command accepts an atom specification to limit its scope. The syntax follows a hierarchy: <strong>#model / chain : residue @ atom</strong>.</p>
@@ -904,6 +1013,7 @@
     <code>sel</code> is a built-in reference to your current selection and works anywhere an atom spec is accepted — e.g. <code>color sel red</code> or <code>show sel atoms</code>.
   </div>
 </section>
+-->
 
 <!-- REPRESENTATIONS -->
 <section id="representations">
