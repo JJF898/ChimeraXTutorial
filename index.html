@@ -127,33 +127,29 @@
   <h2>ChimeraX Tutorial</h2>
   
   <span class="nav-section">Getting started</span>
+  <a href="#Intro">Introduction</div>
   <a href="#Tool">The Toolbar</div>
   <a href="#Command">The Command Line</a>
-  <!--<a href="#opening">Opening Structures</a>-->
-  <span class="nav-section">Core Skills</span>
-  <a href="#navigation">Navigation & Viewing</a>
-  <a href="#selection">Selection Tools</a>
-  <a href="#representations">Representations</a>
-  <a href="#coloring">Coloring</a>
   <span class="nav-section">The morph function</span>
   <a href="#morph">The Morph Function</a>
   <a href="#morph-walkthrough">Morph Walkthrough</a>
   <a href="#scripts">Downloadable Scripts</a>
-  <a href="#tips">Tips & Troubleshooting</a>
 </nav>
 
 <main>
 
 <!--START-->
-
-<section id="Tool">
+<section id="Intro">
 <h2>Getting Started</h2>
 <p>This is what you see when you first open ChimeraX. The top toolbar contains most of the basic functions you'll need to open a protein and visualize its structure.</p>
 <img src="Homepage.png" alt="ChimeraX Homepage" style="width: 100%; border-radius: 5px; margin: 16px 0;" />
 <p>The toolbar is divided into sections with shortcuts for quick actions. Each section is described below.</p>
 
 <div style="height: 40px;"></div>
-
+</section>
+  
+ <!--TOOLBAR--> 
+<section id="Tool">
 <div style="display: flex; gap: 5px;">
   <div style="flex: 1;">
     <h2 style="border-bottom: none; margin-top: 18px; margin-bottom: 0px;">The Toolbar</h2>
@@ -163,8 +159,6 @@
   </div>
 </div>
 <hr style="border: none; border-top: 1px solid #dce8f5; margin-top: 18px margin-bottom: 32px 0;" />
-
-<!--TABS-->
 
 <div id="tabgroup-1">
   <div class="tab-bar">
@@ -548,11 +542,12 @@
     </div>
   </div>
 </div>
-  
-<div style="height: 40px;"></div>  
+</div>
+</section>  
 
-<!-- COMMAND LINE -->
-<section id="Command">
+<section id="Command">  
+
+<div style="height: 40px;"></div>  
 <h2>Commands and Controls</h2>
 
         <h3>Default Mouse Controls</h3>
@@ -592,7 +587,7 @@
 <h3>The Command Line</h3>
 <p>The Command Line gives you control over every aspect of the software. It allows you to skip the process of clicking through menus and finding buttons with predetermined scripts. Intead, it allows you to create your own.</p>  
 
-<div style="height: 30px;"></div>  
+<div style="height: 10px;"></div>  
 <p><strong>Useful Commands</strong></p>
 <div style="height: 10px;"></div> 
 
@@ -648,39 +643,6 @@
       </div>   
         
   <div class="tab-content" id="content-View">
-        <h3>Default Mouse Controls</h3>
-        <div class="mouse-grid">
-          <div class="mouse-card">
-            <div class="action">🔄 Rotate</div>
-            <div class="control">Left drag</div>
-            <div class="sub">Mac: click-drag or 2-finger rotate</div>
-          </div>
-          <div class="mouse-card">
-            <div class="action">✥ Translate</div>
-            <div class="control">Middle / Right drag</div>
-            <div class="sub">Mac: Alt+drag or 3-finger drag</div>
-          </div>
-          <div class="mouse-card">
-            <div class="action">🔍 Zoom</div>
-            <div class="control">Scroll wheel</div>
-            <div class="sub">Mac: pinch or 4-finger drag</div>
-          </div>
-          <div class="mouse-card">
-            <div class="action">👆 Select</div>
-            <div class="control">Ctrl + left click</div>
-            <div class="sub">+Shift to add to selection</div>
-          </div>
-          <div class="mouse-card">
-            <div class="action">🏷 Identify</div>
-            <div class="control">Hover (pause)</div>
-            <div class="sub">Shows residue/atom label</div>
-          </div>
-          <div class="mouse-card">
-            <div class="action">↩ Z-Rotate</div>
-            <div class="control">Ctrl + left drag</div>
-            <div class="sub">Rotates around viewing axis</div>
-          </div>
-        </div>
       
         <h3>View Command</h3>
         <p>The <code>view</code> command focuses and resets the camera — essential for quickly navigating to a specific part of a structure.</p>
@@ -871,7 +833,8 @@
     </div>
   </div>
 </div>  
-
+</div>
+</section>
   
 <!-- OPENING -->
 <!--
@@ -1199,6 +1162,7 @@
     <tr><td>same true|false</td><td>Skip alignment if structures are already atom-paired</td></tr>
     <tr><td>core_fraction 0–1</td><td>Fraction of atoms used as rigid core for alignment during interpolation</td></tr>
   </table>
+</section>
 
   <!--
   <h3>Example Molecules for Morphing</h3>
@@ -1285,7 +1249,6 @@
       </div>
     </div>
   </div>
-</section>
 
   <h3>Useful Utility Commands</h3>
   <div class="code-block">
@@ -1297,9 +1260,11 @@
 <span class="cmd">undo</span>                         <span class="comment"># undo last command</span>
 <span class="cmd">help</span> <span class="val">morph</span>                  <span class="comment"># open morph docs in browser</span></pre>
   </div>
-
+</section>
+  
 <!-- SCRIPTS -->
 <section id="scripts">
+<div style="height: 20px"></div>
   <h2>Downloadable Scripts</h2>
   <p>Ready-to-run <strong>.cxs ChimeraX scripts</strong> — open them via <strong>File → Open</strong> or drag onto the ChimeraX window. Each script fetches, aligns, morphs, styles, and plays automatically.</p>
   <div class="cards">
