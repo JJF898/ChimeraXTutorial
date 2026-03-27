@@ -553,14 +553,71 @@
 <!-- COMMAND LINE -->
 <section id="Command">
 <h2>The Command Line</h2>
-<p>The Command Line gives you control over every aspect of the software. It allows you to skip the process of clicking through menus and finding buttons with predetermined scripts. Intead, it allows you to create your own .</p>  
+<p>The Command Line gives you control over every aspect of the software. It allows you to skip the process of clicking through menus and finding buttons with predetermined scripts. Intead, it allows you to create your own.</p>  
 
-<!--
-<details style="background: #1a1d27; border: 1px solid #2e3250; border-radius: 10px; padding: 14px 18px; margin-bottom: 10px;">
-  <summary style="cursor: pointer; font-weight: 600; color: #e4e6f0;">Click me</summary>
-  <p style="margin-top: 12px; color: #8890b0;">This is the hidden description that drops down.</p>
-</details>
--->
+<h2 style="color: var(--acent)">Useful commands</h2>
+<div class="tabs">
+
+<div class="tab-bar">
+  <button class="tab active" onclick="switchTab('content-Opeing', this)">Opening</button>
+  <button class="tab active" onclick="switchTab('content-View', this)">View</button>
+  <button class="tab" onclick="switchTab('content-Selection', this)">Selection</button>
+  <button class="tab" onclick="switchTab('content-Representations', this)">Representations</button>
+  <button class="tab" onclick="switchTab('content-Coloring', this)">Coloring</button>
+</div>
+
+<h3>Opening</h3>
+<div class="tab-content active" id="content-Opening">
+  <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
+  <h3>File</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
+    </div>
+    <div class="item">
+      <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
+    </div>
+    <div class="item">
+      <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
+    </div>
+  </div>
+  
+  <h3>View</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
+    </div>
+    <div class="item">
+      <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
+    </div>
+  </div>
+</div>   
+  
+<div class="tab-content active" id="content-View">
+  <img src="Home_menu.png" alt="Home menu" style="width: 100%; border-radius: 5px; margin: 16px 0;"/>
+  <h3>File</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Open —</strong> Opens a local file from your computer, the same as opening a file in Word or any other program.</p>
+    </div>
+    <div class="item">
+      <p><strong>Recent —</strong> Pulls up a menu showing all files you've worked on recently so you can quickly pick up where you left off.</p>
+    </div>
+    <div class="item">
+      <p><strong>Save —</strong> Saves the current state of your session, including the structure, styling, and view.</p>
+    </div>
+  </div>
+  
+  <h3>Images</h3>
+  <div class="group">
+    <div class="item">
+      <p><strong>Snapshot —</strong> Takes a screenshot of the molecule exactly as it appears on screen — same colors, lighting, and angle — and saves it to your computer.</p>
+    </div>
+    <div class="item">
+      <p><strong>Spin Movie —</strong> Records a short video of the molecule rotating and saves it to your computer. Useful for presentations or publications.</p>
+    </div>
+  </div>
+</div> 
   
 <!-- OPENING -->
 <!--
