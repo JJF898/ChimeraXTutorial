@@ -608,7 +608,7 @@
       </div>
       </div>   
         
-      <div class="tab-content" id="content-View">
+  <div class="tab-content" id="content-View">
         <h3>Default Mouse Controls</h3>
         <div class="mouse-grid">
           <div class="mouse-card">
@@ -672,7 +672,60 @@
       <span class="cmd">move</span> <span class="val">y</span> <span class="val">-2</span> <span class="val">10</span>               <span class="comment"># translate -2 Å along Y over 10 frames</span></pre>
         </div>
         </div>
-  </div> 
+  </div>
+  <div class="tab-content" id="content-Selection">
+    <h2>Selection Tools</h2>
+    <p>Selection is central to ChimeraX — almost every command accepts an atom specification to limit its scope. The syntax follows a hierarchy: <strong>#model / chain : residue @ atom</strong>.</p>
+  
+    <h3>The select Command</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="cmd">select</span>                        <span class="comment"># select everything</span>
+  <span class="cmd">select</span> <span class="val">/A</span>                    <span class="comment"># select chain A</span>
+  <span class="cmd">select</span> <span class="val">/A:50-100</span>             <span class="comment"># residues 50–100 in chain A</span>
+  <span class="cmd">select</span> <span class="val">:lys,arg</span>              <span class="comment"># all lysine and arginine residues</span>
+  <span class="cmd">select</span> <span class="val">@ca</span>                   <span class="comment"># all alpha-carbon atoms</span>
+  <span class="cmd">select</span> <span class="val">protein</span>               <span class="comment"># all protein residues</span>
+  <span class="cmd">select</span> <span class="val">ligand</span>                <span class="comment"># all ligand molecules</span>
+  <span class="cmd">select</span> <span class="val">helix</span>                 <span class="comment"># alpha-helix residues only</span>
+  <span class="cmd">~select</span>                       <span class="comment"># deselect everything</span></pre>
+    </div>
+  
+    <h3>Atom Specification Hierarchy</h3>
+    <table>
+      <tr><th>Symbol</th><th>Level</th><th>Example</th></tr>
+      <tr><td>#</td><td>Model</td><td>#1, #2, #1,3-5</td></tr>
+      <tr><td>/</td><td>Chain</td><td>/A, /B-D</td></tr>
+      <tr><td>:</td><td>Residue</td><td>:51, :12-25, :lys, :glu,arg</td></tr>
+      <tr><td>@</td><td>Atom</td><td>@ca, @n,ca,c,o, @S*</td></tr>
+    </table>
+    <p>Combine them — <code>#1/A:50@CA</code> means: model 1, chain A, residue 50, CA atom.</p>
+  
+    <h3>Boolean Operators</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="comment"># & = AND,  | = OR,  ~ = NOT</span>
+  <span class="cmd">select</span> <span class="val">/A</span> <span class="kw">&</span> <span class="val">protein</span>          <span class="comment"># chain A protein only</span>
+  <span class="cmd">select</span> <span class="val">helix</span> <span class="kw">&</span> <span class="val">:arg,lys</span>     <span class="comment"># Arg/Lys residues in helices</span>
+  <span class="cmd">select</span> <span class="kw">~</span><span class="val">protein</span>              <span class="comment"># everything except protein</span>
+  <span class="cmd">select</span> <span class="val">ligand</span> <span class="kw">|</span> <span class="val">solvent</span>     <span class="comment"># ligand OR solvent</span></pre>
+    </div>
+  
+    <h3>Distance-Based Selection</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><span class="comment"># Select residues within 4.5 Å of ligand</span>
+  <span class="cmd">select</span> <span class="val">zone</span> <span class="val">ligand</span> <span class="val">4.5</span> <span class="val">protein</span> <span class="param">residues</span> <span class="val">true</span>
+  
+  <span class="comment"># Inline zone syntax</span>
+  <span class="cmd">select</span> <span class="val">ligand</span> <span class="val">:&lt; 5</span> <span class="kw">&</span> <span class="val">protein</span>  <span class="comment"># protein atoms within 5 Å of ligand</span></pre>
+    </div>
+  
+    <div class="alert alert-tip">
+      <strong>💡 Using sel</strong>
+      <code>sel</code> is a built-in reference to your current selection and works anywhere an atom spec is accepted — e.g. <code>color sel red</code> or <code>show sel atoms</code>.
+    </div>
+  </div>
 </div>  
 
   
@@ -725,11 +778,11 @@
     After opening structures, run <code>info models</code> to confirm model numbers. Newly opened structures are usually assigned #1, #2, etc. in order.
   </div>
 </section>
--->
 
 <div style="height: 40px;"></div>  
-
+-->
 <!-- NAVIGATION -->
+<!--
 <section id="navigation">
   <h2>Navigation & Viewing Controls</h2>
   <p>ChimeraX lets you manipulate the view interactively with mouse/trackpad controls, and also provides commands for scripted, precise rotation, zoom, and translation.</p>
@@ -796,7 +849,7 @@
 <span class="cmd">move</span> <span class="val">x</span> <span class="val">5</span>                    <span class="comment"># translate 5 Å along X</span>
 <span class="cmd">move</span> <span class="val">y</span> <span class="val">-2</span> <span class="val">10</span>               <span class="comment"># translate -2 Å along Y over 10 frames</span></pre>
   </div>
-
+-->
 <!-- SELECTION -->
 <section id="selection">
   <h2>Selection Tools</h2>
