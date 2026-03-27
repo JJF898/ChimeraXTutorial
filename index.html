@@ -1345,7 +1345,7 @@ coordset #3 play true loop true maxFrameRate 25
   const blob = new Blob([content], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url; a.download = `${name}_morph.cxs`;
+  a.href = url; a.download = `${name}_morph.cxc`;
   document.body.appendChild(a); a.click();
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
